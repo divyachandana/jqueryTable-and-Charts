@@ -1,0 +1,40 @@
+<html>
+<head>
+
+    <link href="c3-master/c3.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div id="chart"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="c3-master/c3.js"></script>
+<script>
+    $(function () {
+        var chart = c3.generate({
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+                    ['data1', 0, 20, 40, 60, 80],
+                ]
+                ,
+                types: {
+                    data1: 'area',
+                    data2: 'area-spline'
+                }
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%Y-%m-%d'
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

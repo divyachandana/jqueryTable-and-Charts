@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="c3-master/c3.css" rel="stylesheet" type="text/css">
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+
+    <title>DataTables example</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+<!--
+    <link rel="stylesheet" type="text/css" href="table.css">
+-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        /* Formatted numbers sorting */
+        $.fn.dataTableExt.oSort['formatted-num-asc'] = function(x,y){
+            x = parseInt( x.replace(/[^\d\-\.\/]/g,'') );
+            y = parseInt( y.replace(/[^\d\-\.\/]/g,'') );
+            return x - y;
+        }
+        $.fn.dataTableExt.oSort['formatted-num-desc'] = function(x,y){
+            x = parseInt( x.replace(/[^\d\-\.\/]/g,'') );
+            y = parseInt( y.replace(/[^\d\-\.\/]/g,'') );
+            return y - x;
+        }
+
+        /* Initialisation */
+        $(document).ready(function() {
+            $('#example').dataTable( {
+                "sPaginationType": "full_numbers",
+                "aoColumnDefs": [ {
+                    "sType": "formatted-num",
+                    "aTargets": [1,2,3,4,5]
+                } ],
+                "aoColumnDefs": [
+                    { "sWidth": "100%", "aTargets": [ -1 ] },
+                ]
+            } );
+        } );
+    </script>
+
+
+</head>
+<body>
+<div id="top">
+    <div id="topLeft"><img src="logo.png"/></div>
+       <div id="topMiddle"> Dashboard > Fee Analysis</div>
+
+    <div id="topRight">
+        <ul>
+            <li><a href="#">Logout</a></li>
+
+            <li><a href="#">Dashboard</a></li>
+        <li><a href="#">NewGoal</a></li>
+    </ul></div>
+
+
+
+</div>
+<div id="left" class="leftStyle">
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Portfolios</a></li>
+        <li><a href="#">Analysis</a></li>
+        <li><a href="#">Activity</a></li>
+        <li><a href="#">Portfolio Builder</a></li>
+    </ul>
+
+</div>
+<div id="right">
+    <div id="chart"></div>
+        <div id="container">
+    <table id="example" border="0" cellpadding="0" cellspacing="0" class="pretty">
+                        <thead>
+        <tr>
+            <th rowspan="2">Local authority</th>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Tax Cost Ratio</th>
+            <th>Turn Over Ratio</th>
+            <th>Expense Ratio</th>
+            <th> Fees/Year</th>
+        </tr>
+        </thead>
+                         <tfoot>
+        <tr>
+            <th scope="row">Total</th>
+            <td>212,920</td>
+            <td>214,860</td>
+            <td>206,390</td>
+            <td>207,535</td>
+            <td>213,210</td>
+            <td>2.7</td>
+        </tr>
+        </tfoot>
+                        <tbody>
+        <tr>
+            <th scope="row">FBGKX</th>
+            <td>9,750</td>
+            <td>9,850</td>
+            <td>9,945</td>
+            <td>9,945</td>
+            <td>10,080</td>
+            <td>1.4</td>
+        </tr>
+        <tr>
+            <th scope="row">VGPMX</th>
+            <td>10,295</td>
+            <td>10,255</td>
+            <td>10,610</td>
+            <td>10,700</td>
+            <td>10,680</td>
+            <td>-0.2</td>
+        </tr>
+        <tr>
+            <th scope="row">VGELX</th>
+            <td>4,945</td>
+            <td>4,625</td>
+            <td>4,365</td>
+            <td>4,445</td>
+            <td>4,675</td>
+            <td>5.2</td>
+        </tr>
+        <tr>
+            <th scope="row">VATLX</th>
+            <td>3,350</td>
+            <td>3,470</td>
+            <td>3,360</td>
+            <td>3,335</td>
+            <td>3,440</td>
+            <td>3.1</td>
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="c3-master/c3.js"></script>
+<script>
+    $(function () {
+        var chart = c3.generate({
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+                    ['data1', 0, 20, 40, 60, 80],
+                ]
+                ,
+                types: {
+                    data1: 'area',
+                    data2: 'area-spline'
+                }
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%Y-%m-%d'
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
