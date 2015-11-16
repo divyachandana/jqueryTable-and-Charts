@@ -3,20 +3,15 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
     <link href="c3-master/c3.css" rel="stylesheet" type="text/css">
 
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
-
-    <title>DataTables example</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
-<!--
-    <link rel="stylesheet" type="text/css" href="table.css">
--->
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-
     <script type="text/javascript" charset="utf-8">
         /* Formatted numbers sorting */
         $.fn.dataTableExt.oSort['formatted-num-asc'] = function(x,y){
@@ -37,15 +32,10 @@
                 "aoColumnDefs": [ {
                     "sType": "formatted-num",
                     "aTargets": [1,2,3,4,5]
-                } ],
-                "aoColumnDefs": [
-                    { "sWidth": "100%", "aTargets": [ -1 ] },
-                ]
+                } ]
             } );
         } );
     </script>
-
-
 </head>
 <body>
 <div id="top">
@@ -54,8 +44,9 @@
 
     <div id="topRight">
         <ul>
-            <li><a href="#">Logout</a></li>
+            <li><img class="imageRight" src="system_config_services.ico"></li>
 
+            <li><a href="#">Logout</a></li>
             <li><a href="#">Dashboard</a></li>
         <li><a href="#">NewGoal</a></li>
     </ul></div>
@@ -74,77 +65,94 @@
 
 </div>
 <div id="right">
-    <div id="chart"></div>
-        <div id="container">
-    <table id="example" border="0" cellpadding="0" cellspacing="0" class="pretty">
-                        <thead>
-        <tr>
-            <th rowspan="2">Local authority</th>
-        </tr>
-        <tr>
-            <th>Type</th>
-            <th>Value</th>
-            <th>Tax Cost Ratio</th>
-            <th>Turn Over Ratio</th>
-            <th>Expense Ratio</th>
-            <th> Fees/Year</th>
-        </tr>
-        </thead>
-                         <tfoot>
-        <tr>
-            <th scope="row">Total</th>
-            <td>212,920</td>
-            <td>214,860</td>
-            <td>206,390</td>
-            <td>207,535</td>
-            <td>213,210</td>
-            <td>2.7</td>
-        </tr>
-        </tfoot>
-                        <tbody>
-        <tr>
-            <th scope="row">FBGKX</th>
-            <td>9,750</td>
-            <td>9,850</td>
-            <td>9,945</td>
-            <td>9,945</td>
-            <td>10,080</td>
-            <td>1.4</td>
-        </tr>
-        <tr>
-            <th scope="row">VGPMX</th>
-            <td>10,295</td>
-            <td>10,255</td>
-            <td>10,610</td>
-            <td>10,700</td>
-            <td>10,680</td>
-            <td>-0.2</td>
-        </tr>
-        <tr>
-            <th scope="row">VGELX</th>
-            <td>4,945</td>
-            <td>4,625</td>
-            <td>4,365</td>
-            <td>4,445</td>
-            <td>4,675</td>
-            <td>5.2</td>
-        </tr>
-        <tr>
-            <th scope="row">VATLX</th>
-            <td>3,350</td>
-            <td>3,470</td>
-            <td>3,360</td>
-            <td>3,335</td>
-            <td>3,440</td>
-            <td>3.1</td>
-        </tr>
+    <div id="rightUp" class="division">
+        <ul>
+            <li>PORTFOLIOS</li>
+<br>
+            <li><a href="#">Portfolio A</a></li>
+            <li><a href="#">Portfolio B</a></li>
+            <li><a href="#">Portfolio C</a></li>
 
-        </tbody>
-    </table>
+        </ul></div>
+        <div id="rightRight" class="division">
+            <ul>
+                <li><a href="#">Summary</a></li>
+                <li><a href="#">Allocation</a></li>
+                <li><a href="#">Risks</a></li>
+                <li><a href="#">Costs</a></li>
+
+            </ul></div>
+    <div id="chart" class="division"></div>
+    <div id="container" class="division">
+
+        <table id="example" border="0" cellpadding="0" cellspacing="0" class="pretty">
+            <thead>
+            <tr>
+                <th rowspan="2">Investments</th>
+            </tr>
+            <tr>
+                <th>Investment</th>
+                <th>Type</th>
+                <th>Value</th>
+                <th>Tax Cost <br>Ratio</th>
+                <th>Turn over<br> Ratio</th>
+                <th>Expense <br>Ratio</th>
+                <th>Fees/Yr</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th scope="row">Total</th>
+                <td>212,920</td>
+                <td>214,860</td>
+                <td>206,390</td>
+                <td>207,535</td>
+                <td>213,210</td>
+                <td>2.7</td>
+                <td>0.1</td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+                <th scope="row">Aberdeen City</th>
+                <td>9,750</td>
+                <td>9,850</td>
+                <td>9,945</td>
+                <td>9,945</td>
+                <td>10,080</td>
+                <td>1.4</td>
+                <td>3.4</td>
+            </tr>
+            <tr>
+                <th scope="row">Aberdeenshire</th>
+                <td>10,295</td>
+                <td>10,255</td>
+                <td>10,610</td>
+                <td>10,700</td>
+                <td>10,680</td>
+                <td>-0.2</td>
+                <td>3.7</td>
+            </tr>
+            <tr>
+                <th scope="row">Angus</th>
+                <td>4,945</td>
+                <td>4,625</td>
+                <td>4,365</td>
+                <td>4,445</td>
+                <td>4,675</td>
+                <td>5.2</td>
+                <td>-5.5</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 <script src="c3-master/c3.js"></script>
 <script>
     $(function () {

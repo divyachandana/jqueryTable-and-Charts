@@ -39,12 +39,7 @@ div {
 
 
 
-#container {
-    padding-top: 50px;
-    width:100%;
-    left: 20%;
-    right: 0;
-}
+
 
 
 #left ul {
@@ -120,8 +115,82 @@ div {
 #top #topRight{
     width:60%;
 }
+.imageRight{
+    height: 50px;
+    width: 50px;
+    float: right;
+    padding-bottom: 30px;
+}
+
+#right #rightUp{
+    float: left;
+    width:100%;
+}
 
 
+#right #rightUp  ul {
+    list-style-type: none;
+    margin: 0;
+    float: left;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#right #rightUp  li {
+    float: left;
+}
+
+
+#right #rightUp  a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#right #rightUp  a:hover, a:active {
+    background-color: #A9A9A9;
+}
+
+
+#right #rightRight{
+    
+    float: right;
+    width:100%;
+}
+
+
+#right #rightRight  ul {
+    list-style-type: none;
+    margin: 0;
+    float: right;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#right #rightRight  li {
+    float: right;
+}
+
+
+#right #rightRight  a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#right #rightRight  a:hover, a:active {
+    background-color: #A9A9A9;
+}
 #right #chart{
 float:right;
     height: 50%;
@@ -134,12 +203,58 @@ float:right;
 
 
 /*
- * DataTables framework
+ * Colour dictionary:
+ *
+ * Table control elements:   #719ba7
+ * Header cells:             #66A9BD
+ * Body header cells:        #91c5d4
+ * Body content cells:       #d5eaf0
+ * Body content cells (alt): #bcd9e1
+ * Footer header:            #b0cc7f
+ * Footer content:           #d7e1c5
  */
 
-div.dataTables_wrapper {
-    background-color: #719ba7;
 
+/*
+ * Page setup styles
+ */
+/*body {
+    font: 80%/1.45em Arial, Verdana, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111;
+    background-color: #fff;
+}*/
+#container {
+
+    width:100%;
+    left: 20%;
+    right: 0;
+    top: 90%;
+}
+#container {
+    margin: 0 auto;
+    width: 960px
+}
+.division{
+    width:100%;
+    height:100px;
+    float:left;
+}
+h1 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+
+/*
+ * DataTables framework
+ */
+div.dataTables_wrapper {
+    width:100%;
+    height: 30px;
 }
 
 div.dataTables_length {
